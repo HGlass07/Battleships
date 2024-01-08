@@ -57,54 +57,58 @@ def play_game(dims):
     def is_valid_coordinate(row, col):
         return 0 <= row < dims and 0 <= col < dims
     
-    
     player_board, computer_board = create_boards(dims)
     player_guessed_coordinates = set()
     computer_guessed_coordinates = set()
 
-    '''player turn'''
-    print("\nPlayer's Turn:")
     while True:
-        try:
-            player_row_guess = int(input("Enter a row number: "))
-            player_col_guess = int(input("Enter a column number: "))
-            
-            if not is_valid_coordinate(dims, player_row_guess, player_col_guess):
-                print("Invalid coordinates, please guess again.")
+        '''player turn'''
+        print("\nPlayer's Turn:")
+        while True:
+            try:
+                player_row_guess = int(input("Enter a row number: "))
+                player_col_guess = int(input("Enter a column number: "))
+                
+                if not is_valid_coordinate(dims, player_row_guess, player_col_guess):
+                    print("Invalid coordinates, please guess again.")
+                    continue
+
+                '''checks if player has already guessed coordinates'''
+                if (player_row_guess, player_col_guess) in player_guessed_coordinates:
+                    print("You've already guessed these coordinates, please guess again.")
+
+                player_guessed_coordinates.add((player_row_guess, player_col_guess))
+                break
+
+            except ValueError:
+                print("Invalid input. Please enter a valid numeric value.")
                 continue
 
-            '''checks if player has already guessed coordinates'''
-            if (player_row_guess, player_col_guess) in player_guessed_coordinates:
-                print("You've already guessed these coordinates, please guess again.")
+        '''checks if player guess hits opponent ship'''
+        if computer_board[player_row_guess][player_col_guess] == 'S':
+            print("Hit!")
+            computer_board[player_row_guess][player_col_guess] == 'X'
+        else:
+            print("You missed")
 
-            player_guessed_coordinates.add((player_row_guess, player_col_guess))
+        '''prints updated computer board, only hit ships will show'''
+        print_computer_board(computer_board)
+
+        '''checks for player win'''
+        if all ('S' not in row for row in computer_board):
+            print("Well done! You sunk all your opponent's ships and won the game")
             break
 
-        except ValueError:
-            print("Invalid input. Please enter a valid numeric value.")
-            continue
+        '''computer turn'''
+        print("\nComputer's Turn:")
+        while True: 
+            computer_row_guess = random.randint(0, dims -1)
+            computer_col_guess = random.randint(0, dims -1)
 
-    '''checks if player guess hits opponent ship'''
-    if computer_board[player_row_guess][player_col_guess] == 'S':
-        print("Hit!")
-        computer_board[player_row_guess][player_col_guess] == 'X'
-    else:
-        print("You missed")
-
-    '''prints updated computer board, only hit ships will show'''
-    print(computer_board)
-
-    '''checks for player win'''
-    if all ('S' not in row for row in computer_board):
-        print("Well done! You sunk all your opponent's ships and won the game")
-
-
-
-
-    '''computer turn'''
-    while True: 
-        computer_row_guess = random.randint(0, dims -1)
-        computer_col_guess = random.randint(0, dims -1)
+            '''checks if computer has already guessed coordinates'''
+            if (computer_row_guess, computer_col_guess) not in computer_guessed_coordinates:
+                computer_guessed_coordinates.add((computer_row_guess, computer_col_guess))
+                break
 
 
 
