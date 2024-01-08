@@ -84,6 +84,23 @@ def play_game(dims):
             print("Invalid input. Please enter a valid numeric value.")
             continue
 
+    '''checks if player guess hits opponent ship'''
+    if computer_board[player_row_guess][player_col_guess] == 'S':
+        print("Hit!")
+        computer_board[player_row_guess][player_col_guess] == 'X'
+    else:
+        print("You missed")
+
+    '''prints updated computer board, only hit ships will show'''
+    print(computer_board)
+
+    '''checks for player win'''
+    if all ('S' not in row for row in computer_board):
+        print("Well done! You sunk all your opponent's ships and won the game")
+
+
+
+
     '''computer turn'''
     while True: 
         computer_row_guess = random.randint(0, dims -1)
