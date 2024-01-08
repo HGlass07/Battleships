@@ -63,12 +63,22 @@ def play_game(dims):
     computer_guessed_coordinates = set()
 
     '''player turn'''
+    print("\nPlayer's Turn:")
     while True:
         try:
             player_row_guess = int(input("Enter a row number: "))
             player_col_guess = int(input("Enter a column number: "))
+            
+            if not is_valid_coordinate(dims, player_row_guess, player_col_guess):
+                print("Invalid coordinates, please guess again.")
+                continue
 
-            if not
+            '''checks if player has already guessed coordinates'''
+            if (player_row_guess, player_col_guess) in player_guessed_coordinates:
+                print("You've already guessed these coordinates, please guess again.")
+
+            player_guessed_coordinates.add((player_row_guess, player_col_guess))
+            break
 
         except:
             ValueError
