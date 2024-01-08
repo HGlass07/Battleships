@@ -52,6 +52,12 @@ def print_computer_board(computer_board):
 
 '''main game function'''
 def play_game(dims):
+
+    '''coordinate check function ensures coodinate guesses are within valid range'''
+    def is_valid_coordinate(row, col):
+        return 0 <= row < dims and 0 <= col < dims
+    
+    
     player_board, computer_board = create_boards(dims)
     player_guessed_coordinates = set()
     computer_guessed_coordinates = set()
@@ -61,6 +67,8 @@ def play_game(dims):
         try:
             player_row_guess = int(input("Enter a row number: "))
             player_col_guess = int(input("Enter a column number: "))
+
+            if not
 
         except:
             ValueError
