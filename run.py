@@ -80,8 +80,9 @@ def play_game(dims):
             player_guessed_coordinates.add((player_row_guess, player_col_guess))
             break
 
-        except:
-            ValueError
+        except ValueError:
+            print("Invalid input. Please enter a valid numeric value.")
+            continue
 
     '''computer turn'''
     while True: 
