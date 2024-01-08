@@ -1,7 +1,7 @@
 import random
 
 def instructions():
-    print("Welcome to Battleships\n")
+    print("\nWelcome to Battleships\n")
     print("Below you will see your board, with your ships represended by 'S' symbols.\n")
     print("Start by guessing coordinates to try and hit your opponent's ships.\n")
     print("The game ends when either you or the computer sinks all their opponent's ships.\n")
@@ -61,7 +61,7 @@ def play_game(dims):
 
     while True:
         '''player turn'''
-        print("\nPlayer's Turn:")
+        print("\nPlayer's Turn")
         while True:
             try:
                 player_row_guess = int(input("Enter a row number: "))
@@ -73,14 +73,14 @@ def play_game(dims):
 
                 '''checks if player has already guessed coordinates'''
                 if (player_row_guess, player_col_guess) in player_guessed_coordinates:
-                    print("You've already guessed these coordinates, please guess again.")
+                    print("You've already guessed these coordinates, please guess again.\n")
                     continue
 
                 player_guessed_coordinates.add((player_row_guess, player_col_guess))
                 break
 
             except ValueError:
-                print("Invalid input. Please enter a valid numeric value.")
+                print("Invalid input. Please enter a valid numeric value.\n")
                 continue
 
         '''checks if player guess hits opponent ship'''
@@ -95,11 +95,11 @@ def play_game(dims):
 
         '''checks for player win'''
         if all ('S' not in row for row in computer_board):
-            print("Well done! You sunk all your opponent's ships and won the game")
+            print("Well done! You sunk all your opponent's ships and won the game\n")
             break
 
         '''computer turn'''
-        print("\nComputer's Turn:")
+        print("\nComputer's Turn")
         while True: 
             computer_row_guess = random.randint(0, dims -1)
             computer_col_guess = random.randint(0, dims -1)
@@ -122,10 +122,10 @@ def play_game(dims):
 
         '''checks for computer win'''
         if all ('S' not in row for row in player_board):
-            print("The computer sunk all your ships, you lose!")
+            print("The computer sunk all your ships, you lose!\n")
             break
 
-    restart = input("Do you want to play again? (yes/no): ")
+    restart = input("Do you want to play again? (yes/no):\n ")
     if restart.lower() == 'yes':
         play_game(dims)
     else:
