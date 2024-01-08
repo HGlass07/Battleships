@@ -56,6 +56,7 @@ def play_game(dims):
     player_guessed_coordinates = set()
     computer_guessed_coordinates = set()
 
+    '''player turn'''
     while True:
         try:
             player_row_guess = int(input("Enter a row number: "))
@@ -64,6 +65,7 @@ def play_game(dims):
         except:
             ValueError
 
+    '''computer turn'''
     while True: 
         computer_row_guess = random.randint(0, dims -1)
         computer_col_guess = random.randint(0, dims -1)
