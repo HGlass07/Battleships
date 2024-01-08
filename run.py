@@ -109,7 +109,22 @@ def play_game(dims):
             if (computer_row_guess, computer_col_guess) not in computer_guessed_coordinates:
                 computer_guessed_coordinates.add((computer_row_guess, computer_col_guess))
                 break
+        
+        '''checks if computer guess hits player ship'''
+        if player_board[computer_row_guess][computer_col_guess] == 'S':
+            print("Computer hit at coordinates: ({}, {})".format(computer_row_guess, computer_col_guess))
+            player_board[computer_row_guess][computer_col_guess] = 'X'
+        else:
+            print("Computer missed")
 
+        '''prints updated player board, updated with hits if applicable'''
+        print("Your board: ")
+        print_board(player_board)
+
+        '''checks for computer win'''
+        if all ('S' not in row for row in player_board):
+            print("The computer sunk all your ships, you lose!")
+            break
 
 
     
