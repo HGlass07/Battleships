@@ -2,9 +2,9 @@ import random
 
 def instructions():
     print("Welcome to Battleships\n")
-    print("Below you will see your board, with your ships represended by 'S' symbols\n")
-    print("Start by guessing a coordinate to try and hit your opponent's ships\n")
-    print("The game ends when either you or the computer sinks all their opponent's ships\n")
+    print("Below you will see your board, with your ships represended by 'S' symbols.\n")
+    print("Start by guessing coordinates to try and hit your opponent's ships.\n")
+    print("The game ends when either you or the computer sinks all their opponent's ships.\n")
 
 
 '''generates player and computer opponent boards'''
@@ -54,7 +54,7 @@ def print_computer_board(computer_board):
 def play_game(dims):
 
     '''coordinate check function ensures coodinate guesses are within valid range'''
-    def is_valid_coordinate(row, col):
+    def is_valid_coordinate(dims, row, col):
         return 0 <= row < dims and 0 <= col < dims
     
     player_board, computer_board = create_boards(dims)
@@ -135,6 +135,6 @@ def play_game(dims):
 
 def main():
     instructions()
-    create_boards(5)
+    play_game(5)
     
 main()
