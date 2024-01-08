@@ -4,7 +4,7 @@ def instructions():
     print("Welcome to Battleships\n")
     print("Below you will see your board, with your ships represended by 'S' symbols\n")
     print("Start by guessing a coordinate to try and hit your opponent's ships\n")
-    print("The game ends when either you or the computer sinks all their opponent's ships")
+    print("The game ends when either you or the computer sinks all their opponent's ships\n")
 
 
 '''generates player and computer opponent boards'''
@@ -126,7 +126,11 @@ def play_game(dims):
             print("The computer sunk all your ships, you lose!")
             break
 
-
+    restart = input("Do you want to play again? (yes/no): ")
+    if restart.lower == 'yes':
+        play_game(dims)
+    else:
+        print("Thanks for playing")
     
 
 def main():
