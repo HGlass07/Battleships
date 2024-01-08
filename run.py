@@ -36,11 +36,6 @@ def create_boards(dims):
 
     return player_board, computer_board
 
-'''player print board function'''
-def print_board(board):
-    for row in board:
-        print(*row)
-
 '''computer print board function - computer board is printed without showing ship location to player,
 ships are only revealed once hit, shown as an "X"'''
 def print_computer_board(computer_board):
@@ -49,14 +44,17 @@ def print_computer_board(computer_board):
     for row in hidden_board: 
         print(*row)
 
+'''player print board function'''
+def print_board(board):
+    for row in board:
+        print(*row)
+
+'''coordinate check function ensures coodinate guesses are within valid range'''
+def is_valid_coordinate(dims, row, col):
+    return 0 <= row < dims and 0 <= col < dims
 
 '''main game function'''
 def play_game(dims):
-
-    '''coordinate check function ensures coodinate guesses are within valid range'''
-    def is_valid_coordinate(dims, row, col):
-        return 0 <= row < dims and 0 <= col < dims
-    
     player_board, computer_board = create_boards(dims)
     player_guessed_coordinates = set()
     computer_guessed_coordinates = set()
@@ -76,6 +74,7 @@ def play_game(dims):
                 '''checks if player has already guessed coordinates'''
                 if (player_row_guess, player_col_guess) in player_guessed_coordinates:
                     print("You've already guessed these coordinates, please guess again.")
+                    continue
 
                 player_guessed_coordinates.add((player_row_guess, player_col_guess))
                 break
