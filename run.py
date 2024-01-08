@@ -86,7 +86,7 @@ def play_game(dims):
         '''checks if player guess hits opponent ship'''
         if computer_board[player_row_guess][player_col_guess] == 'S':
             print("Hit!")
-            computer_board[player_row_guess][player_col_guess] == 'X'
+            computer_board[player_row_guess][player_col_guess] = 'X'
         else:
             print("You missed")
 
@@ -126,7 +126,7 @@ def play_game(dims):
             break
 
     restart = input("Do you want to play again? (yes/no): ")
-    if restart.lower == 'yes':
+    if restart.lower() == 'yes':
         play_game(dims)
     else:
         print("Thanks for playing")
