@@ -50,11 +50,25 @@ def print_computer_board(computer_board):
         print(*row)
 
 
-
+'''main game function'''
 def play_game(dims):
     player_board, computer_board = create_boards(dims)
     player_guessed_coordinates = set()
     computer_guessed_coordinates = set()
+
+    while True:
+        try:
+            player_row_guess = int(input("Enter a row number: "))
+            player_col_guess = int(input("Enter a column number: "))
+
+        except:
+            ValueError
+
+    while True: 
+        computer_row_guess = random.randint(0, dims -1)
+        computer_col_guess = random.randint(0, dims -1)
+
+
 
     
 
