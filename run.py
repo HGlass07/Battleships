@@ -64,8 +64,8 @@ def play_game(dims):
         print("\nPlayer's Turn")
         while True:
             try:
-                player_row_guess = int(input("Enter a row number: "))
-                player_col_guess = int(input("Enter a column number: "))
+                player_row_guess = int(input("Enter a row number:\n"))
+                player_col_guess = int(input("Enter a column number:\n"))
                 
                 if not is_valid_coordinate(dims, player_row_guess, player_col_guess):
                     print("Invalid coordinates, please guess again.")
