@@ -1,5 +1,6 @@
 import random
 
+
 def instructions():
     print("\nWelcome to Battleships\n")
     print("Below you will see your board, with your")
@@ -46,7 +47,10 @@ def create_boards(dims):
 
 
 def print_computer_board(computer_board):
-    hidden_board = [['O' if cell != 'X' else 'X' for cell in row] for row in computer_board]
+    hidden_board = [
+        ['O' if cell != 'X' else 'X' for cell in row] 
+        for row in computer_board
+    ]
     print("Computer's Board:")
     for row in hidden_board:
         print(*row)
@@ -59,15 +63,15 @@ def print_board(board):
 
 
 # coordinate check function ensures coodinate guesses are within valid range
-def is_valid_coordinate(dims, row, col):
+def valid_coord(dims, row, col):
     return 0 <= row < dims and 0 <= col < dims
 
 
 # main game function
 def play_game(dims):
     player_board, computer_board = create_boards(dims)
-    player_guessed_coordinates = set()
-    computer_guessed_coordinates = set()
+    player_guess = set()
+    computer_guess = set()
 
     while True:
         # player turn
@@ -76,15 +80,16 @@ def play_game(dims):
             try:
                 player_row_guess = int(input("Enter a row number: "))
                 player_col_guess = int(input("Enter a column number: "))
-                if not is_valid_coordinate(dims, player_row_guess, player_col_guess):
+                if not valid_coord(dims, player_row_guess, player_col_guess):
                     print("Invalid coordinates, please guess again.")
                     continue
                 # checks if player has already guessed coordinates
-                if (player_row_guess, player_col_guess) in player_guessed_coordinates:
-                    print("You've already guessed these coordinates, please guess again.\n")
+                if (player_row_guess, player_col_guess) in player_guess:
+                    print("You've already guessed these coordinates") 
+                    print("please guess again.\n")
                     continue
 
-                player_guessed_coordinates.add((player_row_guess, player_col_guess))
+                player_guess.add((player_row_guess, player_col_guess))
                 break
 
             except ValueError:
@@ -103,7 +108,8 @@ def play_game(dims):
 
         # checks for player win
         if all('S' not in row for row in computer_board):
-            print("Well done! You sunk all your opponent's ships and won the game\n")
+            print("Well done! You sunk all your opponent's ships") 
+            print("and won the game\n")
             break
 
         # computer turn
@@ -113,12 +119,13 @@ def play_game(dims):
             computer_col_guess = random.randint(0, dims - 1)
 
             # checks if computer has already guessed coordinates
-            if (computer_row_guess, computer_col_guess) not in computer_guessed_coordinates:
-                computer_guessed_coordinates.add((computer_row_guess, computer_col_guess))
+            if (computer_row_guess, computer_col_guess) not in computer_guess:
+                computer_guess.add((computer_row_guess, computer_col_guess))
                 break
         # checks if computer guess hits player ship
         if player_board[computer_row_guess][computer_col_guess] == 'S':
-            print("Computer hit at coordinates: ({}, {})".format(computer_row_guess, computer_col_guess))
+            print("Computer hit at coordinates: ({}, {})".format
+                  (computer_row_guess, computer_col_guess))
             player_board[computer_row_guess][computer_col_guess] = 'X'
         else:
             print("Computer missed")
