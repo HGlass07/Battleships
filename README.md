@@ -21,7 +21,10 @@ Battleships is a python programme designed to simulate a version of the popular 
 The game instructions/introduction are displayed at the start
 
 
-The game displays the game boards as seen below. The size of the boards can also be customised using 'dims' 
+
+
+The game displays the game boards as seen below. The size of the boards can also be customised on the back-end using 'dims' 
+
 
 
 As the game progresses, hit ships are highlighted. The player can only see computer ships that have already been hit.
@@ -41,10 +44,25 @@ As the game progresses, hit ships are highlighted. The player can only see compu
 
 **Validation:**
 
+The app was tested using the Code Institute Python Linter, and produced no errors, as can be seen below:
+
+</details>
+<details><summary>CI Python Linter</summary>
+![python_linter](https://github.com/HGlass07/Battleships/assets/130750468/a782f9d3-ca93-4f82-9195-06b4575d372a)
+</details>
+
 
 
 --------------
 ## Deployment:
+
+This app was deployed with Heroku, linked to a GitHub repository, using the steps below:
+- Clone or fork the relevent repository
+- Create a new app in Heroku
+- Link the app to the relevent GitHub repository
+- Create a config var named PORT set to a value of 8000
+- Add the NodeJS and Python buildpacks
+- Deploy the app, making sure the correct repository branch is selected, in this case 'main'
 
 
 --------------
