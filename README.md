@@ -1,32 +1,55 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Battleships Game
+## Contents:
+1. Description
+2. Design Features
+3. Testing
+4. Deployment
+5. Credits
 
-Welcome,
+--------------
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+[Site Link](https:)
 
-## Reminders
+## Description:
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+Battleships is a python programme designed to simulate a version of the popular boardgame of the same name. It works by setting out game boards for the player and the computer, with both boards being populated by 4 'ships' each, represented by 'S' symbols on the board. The positions of the ships are randomly generated at the start of each game to ensure variation and replayability. The player is then prompted to choose both a column and row number to produce a coordinate. If the guessed coordinate corresponds with a computer ship, it will be crossed out and it's position displayed to the player. The computer also takes turns selecting points on the player's board at random to try and guess the location of the player's ships. The game ends when either the player or the computer looses all of their ships. An option is given to the player to play again or not. 
 
-## Creating the Heroku app
+--------------
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Design features: 
 
-1. `heroku/python`
-2. `heroku/nodejs`
+The game instructions/introduction are displayed at the start
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+The game displays the game boards as seen below. The size of the boards can also be customised using 'dims' 
 
-Connect your GitHub repository and deploy as normal.
 
-## Constraints
+As the game progresses, hit ships are highlighted. The player can only see computer ships that have already been hit.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
----
 
-Happy coding!
+
+
+--------------
+## Features:
+
+
+--------------
+## Testing:
+
+**Bugs identified:**
+
+**Validation:**
+
+
+
+--------------
+## Deployment:
+
+
+--------------
+## Credits:
+
+
+--------------
+## Aknowledgements:
