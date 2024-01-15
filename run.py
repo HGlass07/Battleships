@@ -60,6 +60,7 @@ class Battleships:
 
     # main game function
     def play_game(self):
+        
         self.create_boards()
 
         while True:
@@ -122,7 +123,7 @@ class Battleships:
 
             # prints updated player board, updated with hits if applicable
             print("Your board: ")
-            self.print_board()
+            self.print_board(self.player_board)
 
             # checks for computer win
             if all('S' not in row for row in self.player_board):
@@ -137,8 +138,10 @@ class Battleships:
 
 
 def main():
-    instructions()
-    play_game(5)
+    game = Battleships(5)
+    game.instructions()
+    game.play_game()
 
 
-main()
+if __name__ == "__main__":
+    main()
