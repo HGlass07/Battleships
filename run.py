@@ -2,10 +2,14 @@ import random
 
 
 class Battleships:
+    def __init__(self, dims):
+        self.dims = dims
+        self.player_board = [['O' for _ in range(dims)] for _ in range(dims)]
+        self.computer_board = [['O' for _ in range(dims)] for _ in range(dims)]
+        self.player_guess = set()
+        self.computer_guess = set()
 
-
-
-    def instructions():
+    def instructions(self):
         print("\nWelcome to Battleships!\n")
         print("Below you will see your board, with your")
         print("ships represended by 'S' symbols.\n")
@@ -16,7 +20,7 @@ class Battleships:
 
 
     # generates player and computer opponent boards
-    def create_boards(dims):
+    def create_boards(self):
         player_board = [['O' for _ in range(dims)] for _ in range(dims)]
         computer_board = [['O' for _ in range(dims)] for _ in range(dims)]
 
