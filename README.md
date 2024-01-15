@@ -39,19 +39,34 @@ Once the game has finished, players have the choice to play again with a new ran
 ![game restart screenshot](assets/images/game_restart.png)  ![game quit screenshot](assets/images/game_quit.png)
 
 
+### Data Model:
+
+This app uses an overall 'Battleships' class as it's data model, which encapsulates the game logic and data. The key components of the model are: 
+
+- Game Boards - the game boards for both the player and computer component are represented as 2D lists, with each cell in the board being either an empty space, a ship(S) or a hit(X).
+  
+- Guessed Coordinates - the player and computer guesses are stored in sets to ensure uniqueness, and allow guessed coordinates to be tracked.
+  
+- Operational Functions - the functions within the data model, including those that create and print the boards, validate coordinate guesses, and the main game function.
+
+- Board Dimensions('dims') - this parameter represents the dimensions of the board, allowing the game to potentially be adapted to create larger boards.
+
+
 ### Potential future features to include:
 - Allow players to adjust board size at will
 - Allow manual ship placement and customisation
+- Introduce different symbols for different ships e.g. a submarine, or a cruiser
 - Allow increased difficulty by weighting the liklihood the computer opponent will hit a player ship
 
 --------------
 ## Testing:
 
-The app was tested with an early deployment to Heroku in advance of the final version deployment, to confirm no errors occur.
+The app was tested with an early deployment to Heroku in advance of the final version deployment, to confirm no errors occur. It was also tested prior to deployment using Visual Studio Code's run python code function.
 
 **Bugs:**
 
-Fixed bugs - 
+Fixed bugs:
+
 While testing, it was found that the boards generated when a user plays another round of the game were still populated by the 'hit' ships from the previous round.
 
 This was resolved by creating a seperate function for generating the computer's ships, and making sure the boards are reset to their initial states when a new game is launched - upon which they are then populated.
@@ -75,4 +90,6 @@ This app was deployed with Heroku, linked to a GitHub repository, using the step
 - Create a config var named PORT set to a value of 8000
 - Add the NodeJS and Python buildpacks
 - Deploy the app, making sure the correct repository branch is selected, in this case 'main'
+
+
 
