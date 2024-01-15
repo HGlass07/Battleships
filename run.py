@@ -25,11 +25,15 @@ class Battleships:
     # four randomly placed 'ships', represended by 'S' are
     # placed on the player and computer boards
     def create_boards(self):
+
+        self.player_board = [['O' for _ in range(self.dims)] for _ in range(self.dims)]
+        self.computer_board = [['O' for _ in range(self.dims)] for _ in range(self.dims)]
+        
         for _ in range(4):
             self.place_ship(self.player_board)
 
         for _ in range(4):
-            self.place_ship(self.computer_board)
+            self.place_computer_ship()
 
         print("Player Board:")
         self.print_board(self.player_board)
@@ -41,6 +45,14 @@ class Battleships:
             col = random.randint(0, self.dims - 1)
             if board[row][col] == 'O':
                 board[row][col] = 'S'
+                break
+
+    def place_computer_ship(self):
+        while True:
+            row = random.randint(0, self.dims - 1)
+            col = random.randint(0, self.dims - 1)
+            if self.computer_board[row][col] == 'O':
+                self.computer_board[row][col] = 'S'
                 break
 
     def print_board(self, board):
@@ -61,6 +73,9 @@ class Battleships:
     # main game function
     def play_game(self):
         
+        self.player_guess = set()
+        self.computer_guess = set()
+
         self.create_boards()
 
         while True:
