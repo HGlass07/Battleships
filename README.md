@@ -49,6 +49,13 @@ Once the game has finished, players have the choice to play again with a new ran
 
 The app was tested with an early deployment to Heroku in advance of the final version deployment, to confirm no errors occur.
 
+**Bugs:**
+
+Fixed bugs - 
+While testing, it was found that the boards generated when a user plays another round of the game were still populated by the 'hit' ships from the previous round.
+
+This was resolved by creating a seperate function for generating the computer's ships, and making sure the boards are reset to their initial states when a new game is launched - upon which they are then populated.
+
 **Validation:**
 
 The app was tested using the Code Institute Python Linter, and produced no errors, as can be seen below:
@@ -69,10 +76,3 @@ This app was deployed with Heroku, linked to a GitHub repository, using the step
 - Add the NodeJS and Python buildpacks
 - Deploy the app, making sure the correct repository branch is selected, in this case 'main'
 
---------------
-## Credits:
-
-
-
---------------
-## Aknowledgements:
