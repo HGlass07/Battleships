@@ -8,7 +8,7 @@
 
 --------------
 
-[Site Link](https:)
+[Site Link](https://battleshipshg-03b28f4389d2.herokuapp.com/)
 
 ## Description:
 
@@ -52,8 +52,7 @@ The app was tested with an early deployment to Heroku in advance of the final ve
 **Validation:**
 
 The app was tested using the Code Institute Python Linter, and produced no errors, as can be seen below:
-
-</details><summary>CI Python Linter</summary>
+<details><summary>CI Python Linter</summary>
 
 ![python_linter](assets/images/python_linter.png)
 
