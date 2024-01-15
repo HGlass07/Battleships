@@ -2,7 +2,7 @@ import random
 
 
 def instructions():
-    print("\nWelcome to Battleships\n")
+    print("\nWelcome to Battleships!\n")
     print("Below you will see your board, with your")
     print("ships represended by 'S' symbols.\n")
     print("Start by guessing coordinates (0-4) to try and hit")
