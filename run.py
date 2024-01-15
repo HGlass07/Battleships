@@ -2,6 +2,7 @@ import random
 
 
 class Battleships:
+    #class constructor
     def __init__(self, dims):
         self.dims = dims
         self.player_board = [['O' for _ in range(dims)] for _ in range(dims)]
@@ -9,6 +10,7 @@ class Battleships:
         self.player_guess = set()
         self.computer_guess = set()
 
+    #game instructions
     def instructions(self):
         print("\nWelcome to Battleships!\n")
         print("Below you will see your board, with your")
@@ -20,54 +22,35 @@ class Battleships:
 
 
     # generates player and computer opponent boards
+    # four randomly placed 'ships', represended by 'S' are
+    # placed on the player and computer boards
     def create_boards(self):
-        player_board = [['O' for _ in range(dims)] for _ in range(dims)]
-        computer_board = [['O' for _ in range(dims)] for _ in range(dims)]
-
-        # four randomly placed 'ships', represended by 'S' are
-        # placed on the player board
         for _ in range(4):
-            while True:
-                row = random.randint(0, dims - 1)
-                col = random.randint(0, dims - 1)
-                if player_board[row][col] == 'O':
-                    player_board[row][col] = 'S'
-                    break
+            self.place_ship(self.player_board)
 
-        # four randomly placed 'ships', represended by 'S' are
-        # placed on the computer board
         for _ in range(4):
-            while True:
-                row = random.randint(0, dims - 1)
-                col = random.randint(0, dims - 1)
-                if computer_board[row][col] == 'O':
-                    computer_board[row][col] = 'S'
-                    break
+            self.place_ship(self.computer_board)
 
-        # player board is printed at the start
         print("Player Board:")
-        print_board(player_board)
+        self.print_board(self.player_board)
 
-        return player_board, computer_board
-    # computer print board function - computer board is printed
-    # without showing ship location to player
-    # ships are only revealed once hit, shown as an "X"
+    # prints player and computer boards
+    def place_ship(self, board):
+        while True:
+            row = random.randint(0, self.dims - 1)
+            col = random.randint(0, self.dims - 1)
+            if board[row][col] == 'O':
+                board[row][col] = 'S'
+                break
 
-
-    def print_computer_board(computer_board):
-        hidden_board = [
-            ['O' if cell != 'X' else 'X' for cell in row] 
-            for row in computer_board
-        ]
-        print("Computer's Board:")
-        for row in hidden_board:
-            print(*row)
-
-
-    # player print board function
-    def print_board(board):
+    def print_board(self, board):
         for row in board:
             print(*row)
+
+    def print_computer_board(self):
+        hidden_board = [['O' if cell != 'X' else 'X' for cell in row] for row in self.computer_board]
+        print("Computer's Board:")
+        self.print_board(hidden_board)    
 
 
     # coordinate check function ensures coodinate guesses are within valid range
