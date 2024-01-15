@@ -5,7 +5,8 @@ class Battleships:
     #class constructor
     def __init__(self, dims):
         self.dims = dims
-        self.player_board = [['O' for _ in range(dims)] for _ in range(dims)]
+        self.player_board = [['O' for _ in range(dims)] 
+        for _ in range(dims)]
         self.computer_board = [['O' for _ in range(dims)] for _ in range(dims)]
         self.player_guess = set()
         self.computer_guess = set()
@@ -28,7 +29,7 @@ class Battleships:
 
         self.player_board = [['O' for _ in range(self.dims)] for _ in range(self.dims)]
         self.computer_board = [['O' for _ in range(self.dims)] for _ in range(self.dims)]
-        
+
         for _ in range(4):
             self.place_ship(self.player_board)
 
@@ -83,6 +84,8 @@ class Battleships:
             print("\nPlayer's Turn")
             while True:
                 try:
+                    # player enteres coordinate guess
+                    # guess undergoes validation
                     player_row_guess = int(input("Enter a row number: "))
                     player_col_guess = int(input("Enter a column number: "))
                     if not self.valid_coord(player_row_guess, player_col_guess):
@@ -145,12 +148,17 @@ class Battleships:
                 print("The computer sunk all your ships, you lose!\n")
                 break
 
-        restart = input("Do you want to play again? (yes/no):\n ")
-        if restart.lower() == 'yes':
-            self.play_game()
-        else:
-            print("Thanks for playing")
-
+        # option to restart game or quit
+        while True:
+            restart = input("Do you want to play again? (yes/no):\n ").lower()
+            if restart == 'yes':
+                self.play_game()
+                break
+            elif restart == 'no':
+                print("Thanks for playing!")
+                break
+            else:
+                print("Invalid input. Please enter 'yes' or 'no'.")
 
 def main():
     game = Battleships(5)
