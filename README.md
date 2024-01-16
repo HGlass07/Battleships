@@ -76,7 +76,7 @@ This was resolved by creating a separate function for generating the computer's 
 The app was tested using the Code Institute Python Linter, and produced no errors, as can be seen below:
 <details><summary>CI Python Linter</summary>
 
-
+![linter screenshot](assets/images/python_linter.png)
 
 </details>
 
