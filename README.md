@@ -20,7 +20,9 @@ The computer also takes turns selecting points on the player's board at random t
 
 ### Project Goals and Outcomes:
 
-The goal of this project is to provide users with a challenging, replayable game app. The screenshots in the design featues section demonstrate this has been achieved by allowing users to conntrol their input, and adjust their actions based on new information. The board randomisation allows players to replay the game with a different layout, whilst the computer opponent's actions create an element of challenge. The code also provides scope for potential additional features to expand the existing game.
+The goal of this project is to provide users with a challenging, replayable game app. The screenshots in the design features section demonstrate this has been achieved by allowing users to control their input, and adjust their actions based on new information. 
+
+The board randomisation allows players to replay the game with a different layout, whilst the computer opponent's actions create an element of challenge. The code also provides scope for potential additional features to expand the existing game.
 
 --------------
 
