@@ -4,7 +4,6 @@
 2. Design Features
 3. Testing
 4. Deployment
-5. Credits
 
 --------------
 
@@ -83,7 +82,7 @@ The app was tested using the Code Institute Python Linter, and produced no error
 --------------
 ## Deployment:
 
-This app was deployed with Heroku, linked to a GitHub repository, using the steps below:
+This app was deployed with Heroku and linked to a GitHub repository, using the steps below:
 - Clone or fork the relevant repository
 - Create a new app in Heroku
 - Link the app to the relevant GitHub repository
