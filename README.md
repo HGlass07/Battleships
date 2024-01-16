@@ -4,6 +4,7 @@
 2. Design Features
 3. Testing
 4. Deployment
+5. Credits
 
 --------------
 
@@ -90,5 +91,9 @@ This app was deployed with Heroku and linked to a GitHub repository, using the s
 - Add the NodeJS and Python buildpacks
 - Deploy the app, making sure the correct repository branch is selected, in this case 'main'
 
+--------------
+## Credits:
+
+- Code Institute - deployment terminal and heroku credits
 
 
