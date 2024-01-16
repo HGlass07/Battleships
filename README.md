@@ -14,9 +14,9 @@
 
 Battleships is a python programme designed to simulate a version of the popular boardgame of the same name. It works by setting out game boards for the player and the computer, with both boards being populated by 4 'ships' each, represented by 'S' symbols on the board. 
 
-The positions of the ships are randomly generated at the start of each game to ensure variation and replayability. The player is then prompted to choose both a column and row number to produce a coordinate. If the guessed coordinate corresponds with a computer ship, it will be crossed out and it's position displayed to the player. 
+The positions of the ships are randomly generated at the start of each game to ensure variation and replayability. The player is then prompted to choose both a column and row number to produce a coordinate. If the guessed coordinate corresponds with a computer ship, it will be crossed out and its position displayed to the player. 
 
-The computer also takes turns selecting points on the player's board at random to try and guess the location of the player's ships. The game ends when either the player or the computer looses all of their ships. An option is given to the player to play again or not. 
+The computer also takes turns selecting points on the player's board at random to try and guess the location of the player's ships. The game ends when either the player or the computer loses all of their ships. An option is given to the player to play again or not. 
 
 --------------
 
@@ -56,7 +56,7 @@ This app uses an overall 'Battleships' class as it's data model, which encapsula
 - Allow players to adjust board size at will
 - Allow manual ship placement and customisation
 - Introduce different symbols for different ships e.g. a submarine, or a cruiser
-- Allow increased difficulty by weighting the liklihood the computer opponent will hit a player ship
+- Allow increased difficulty by weighting the likelihood the computer opponent will hit a player ship
 
 --------------
 ## Testing:
@@ -69,14 +69,14 @@ Fixed bugs:
 
 While testing, it was found that the boards generated when a user plays another round of the game were still populated by the 'hit' ships from the previous round.
 
-This was resolved by creating a seperate function for generating the computer's ships, and making sure the boards are reset to their initial states when a new game is launched - upon which they are then populated.
+This was resolved by creating a separate function for generating the computer's ships, and making sure the boards are reset to their initial states when a new game is launched - upon which they are then populated.
 
 **Validation:**
 
 The app was tested using the Code Institute Python Linter, and produced no errors, as can be seen below:
 <details><summary>CI Python Linter</summary>
 
-![python_linter](assets/images/python_linter.png)
+
 
 </details>
 
@@ -84,9 +84,9 @@ The app was tested using the Code Institute Python Linter, and produced no error
 ## Deployment:
 
 This app was deployed with Heroku, linked to a GitHub repository, using the steps below:
-- Clone or fork the relevent repository
+- Clone or fork the relevant repository
 - Create a new app in Heroku
-- Link the app to the relevent GitHub repository
+- Link the app to the relevant GitHub repository
 - Create a config var named PORT set to a value of 8000
 - Add the NodeJS and Python buildpacks
 - Deploy the app, making sure the correct repository branch is selected, in this case 'main'
